@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char input_str[100];
+    int length = 0;
+
+    // to Get  the user input
+    scanf("%99[^\n]", input_str);      //Read up to 99 characters until a newline character is encountered.
+
+    // to calculate the length of the last word
+    for (int i = strlen(input_str) - 1; i >= 0 && input_str[i] == ' '; i--);
+    for (int i = strlen(input_str) - 1; i >= 0 && input_str[i] != ' '; i--) {
+        length++;
+    }
+
+    // to print the length of the last word
+    printf(" %d\n", length);
+
+    return 0;
+}
